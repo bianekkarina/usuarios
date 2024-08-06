@@ -16,7 +16,6 @@ function exibirMenu() {
   `)
 
   let escolha = prompt("Escolha uma opção: ")
-  let index
 
   switch (escolha) {
     case '1':
@@ -34,7 +33,7 @@ function exibirMenu() {
       break
     case '3':
         listarUsuarios();
-        index = parseInt(prompt('Escolha o usuário para editar: ')) - 1;
+        let id = parseInt(prompt('Escolha o usuário para editar: ')) 
         const novoNome = prompt('Novo nome: ');
         const novoTelefone = prompt('Novo telefone: ');
         const novoEmail = prompt('Novo email: ');
@@ -45,7 +44,7 @@ function exibirMenu() {
         break;
     case '4':
         listarUsuarios()
-        index = parseInt(prompt('Número do usuário a deletar: ')) - 1;
+        id = parseInt(prompt('Número do usuário a deletar: ')) 
         deletarUsuario(id);
         console.log('Usuário deletado com sucesso!');
         exibirMenu();
