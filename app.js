@@ -19,11 +19,15 @@ function exibirMenu() {
 
   switch (escolha) {
     case '1':
-        var nome = prompt("Informe o nome do usuário: ")
-        var telefone = prompt("Informe o telefone: ")
-        var email = prompt("Informe o email: ")
+        let nome = prompt("Informe o nome do usuário: ")
+        let telefones = []
+        let telefone
+        while ((telefone = prompt('Telefone (ou deixe em branco para sair): '))) {
+            telefones.push(telefone);
+            }
+        let email = prompt("Informe o email: ")
         
-        adicionarUsuario({nome, telefone, email})
+        adicionarUsuario({nome, telefones, email})
         console.log('Usuário cadastrado com sucesso!')
         exibirMenu()
         break
@@ -34,9 +38,9 @@ function exibirMenu() {
     case '3':
         listarUsuarios();
         var id = parseInt(prompt('Escolha o usuário para editar: ')) 
-        const novoNome = prompt('Novo nome: ');
-        const novoTelefone = prompt('Novo telefone: ');
-        const novoEmail = prompt('Novo email: ');
+        let novoNome = prompt('Novo nome: ');
+        let novoTelefone = prompt('Novo telefone: ');
+        let novoEmail = prompt('Novo email: ');
 
         editarUsuario(id, { nome: novoNome, telefone: novoTelefone, email: novoEmail });
         console.log('Usuário atualizado com sucesso!');
