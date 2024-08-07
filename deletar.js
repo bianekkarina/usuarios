@@ -8,4 +8,3 @@ function deletarUsuario(id) {
 }
 
 module.exports = deletarUsuario
-
