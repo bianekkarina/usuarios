@@ -1,12 +1,19 @@
 let usuarios = require('./usuarios')
 
 function listarUsuarios() {
-    if (usuarios.length === 0) {
-        throw new Error("Nada aqui")
-    } else {
-        usuarios.forEach(usuario => {
-            console.log(`ID: ${usuario.id}, Nome: ${usuario.nome}, Telefone: ${usuario.telefone}, Email: ${usuario.email}`)
-        })
+
+    for (let i = 0; i < usuarios.length; i++) {
+        const usuario = usuarios[i];
+        console.log(`
+        id: ${usuario.id},
+        nome: ${usuario.nome},
+        email: ${usuario.email},
+        `);
+            
+    for (let j = 0; j < usuario.telefone.length; j++) {
+        console.log(`
+        ${j+1}. ${usuario.telefone[j]}`);
+    }
     }
 }
 
