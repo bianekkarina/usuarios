@@ -1,4 +1,4 @@
-let usuarios = require('./usuarios');
+let usuarios = require('./usuarios')
 
 function editarUsuario(id, novoUsuario) {
    let index = usuarios.findIndex(usuario => usuario.id === id) 
