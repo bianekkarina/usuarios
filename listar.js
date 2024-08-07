@@ -1,4 +1,4 @@
-let usuarios = require('./usuarios');
+let usuarios = require('./usuarios')
 
 function listarUsuarios() {
     if (usuarios.length === 0) {

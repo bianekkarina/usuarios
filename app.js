@@ -33,7 +33,7 @@ function exibirMenu() {
       break
     case '3':
         listarUsuarios();
-        let id = parseInt(prompt('Escolha o usuário para editar: ')) 
+        var id = parseInt(prompt('Escolha o usuário para editar: ')) 
         const novoNome = prompt('Novo nome: ');
         const novoTelefone = prompt('Novo telefone: ');
         const novoEmail = prompt('Novo email: ');
