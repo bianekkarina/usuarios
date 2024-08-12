@@ -20,8 +20,8 @@ function exibirMenu() {
   switch (escolha) {
     case '1':
         let nome = prompt("Informe o nome do usuário: ")
-        let telefones = []
-        let telefone
+        var telefones = []
+        var telefone
         while ((telefone = prompt('Telefone (ou deixe em branco para sair): '))) {
             telefones.push(telefone);
             }
@@ -39,18 +39,21 @@ function exibirMenu() {
         listarUsuarios();
         var id = parseInt(prompt('Escolha o usuário para editar: ')) 
         let novoNome = prompt('Novo nome: ');
-        let novoTelefone = prompt('Novo telefone: ');
+        let novoTelefone
+        let novosTelefones = []
+        while ((novoTelefone = prompt('Novo telefone: '))) {
+            novosTelefones.push(novoTelefone)
+        };
         let novoEmail = prompt('Novo email: ');
 
-        editarUsuario(id, { nome: novoNome, telefone: novoTelefone, email: novoEmail });
-        console.log('Usuário atualizado com sucesso!');
+        editarUsuario(id, { nome: novoNome, telefones: novosTelefones, email: novoEmail });
         exibirMenu();
         break;
     case '4':
         listarUsuarios()
         id = parseInt(prompt('Número do usuário a deletar: ')) 
-        deletarUsuario(id);
-        console.log('Usuário deletado com sucesso!');
+        let confirmacao = prompt("Tem certeza que deseja remover? (sim/nao): ")
+        deletarUsuario(id, confirmacao);
         exibirMenu();
         break;
     case '5':
