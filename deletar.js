@@ -1,18 +1,17 @@
-let usuarios = require('./usuarios');
+let usuarios = require('./usuarios')
 
-function editarUsuario(id, novoUsuario) {
-
-   let mesmoEmail = usuarios.find(usuario => usuario.email === novoUsuario.email)
-   if (mesmoEmail) {
-      console.log("Erro: já existe um usuário com esse email!")
-      return false
-   }
-
+function deletarUsuario(id, confirmacao) {
    let index = usuarios.findIndex(usuario => usuario.id === id) 
-   if (index !== -1) {
-    usuarios[index] = {id: id, ...novoUsuario}
-    console.log('Usuário atualizado com sucesso!');
-   }
+    if (index !== -1) {
+        if (confirmacao.toLowerCase() === 'sim') {
+            usuarios.splice(index, 1)
+            console.log('Usuário deletado com sucesso!')
+            return true
+        } else {
+            return false
+        }
+    }
+    return false
 }
 
-module.exports = editarUsuario
+module.exports = deletarUsuario
