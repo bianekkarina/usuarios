@@ -5,7 +5,7 @@ function adicionarUsuario(usuario) {
 
     let jaExiste = usuarios.find(usu => usu.email === usuario.email)
     if (jaExiste) {
-        throw new Error("Já existe um usuário com esse email!")
+        throw new Error("Já existe um usuário com esse email.")
     } else {
     usuarios.push(usuario)
     }
