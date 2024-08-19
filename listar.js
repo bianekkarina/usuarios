@@ -12,7 +12,7 @@ function listarUsuarios() {
             
         for (let j = 0; j < usuario.telefones.length; j++) {
             console.log(`
-            ${j+1}. ${usuario.telefones[j]}`);
+            ${j+1} - ${usuario.telefones[j]}`);
         }
     }
 }
